@@ -242,19 +242,19 @@ img{max-width:100%;display:block}
 .demo-intro .try-note svg{width:15px;height:15px}
 
 /* booking widget */
-.booking-wrap{display:grid;grid-template-columns:300px 1fr;gap:30px}
-.bk-col{background:#FBF8F2;border:1px solid var(--line);border-radius:18px;padding:24px}
+.booking-wrap{display:grid;grid-template-columns:300px 1fr;gap:30px;min-width:0;max-width:100%}
+.bk-col{background:#FBF8F2;border:1px solid var(--line);border-radius:18px;padding:24px;min-width:0;max-width:100%}
 .bk-col h4{font-family:var(--display);font-weight:500;font-size:1.02rem;margin-bottom:16px}
-.field{margin-bottom:18px}
+.field{margin-bottom:18px;min-width:0;max-width:100%}
 .field label{display:block;font-size:.8rem;font-weight:600;color:var(--ink-soft);margin-bottom:8px;letter-spacing:.03em}
 .field select,.field input[type="text"]{
-  width:100%;padding:13px 14px;border-radius:12px;border:1.5px solid var(--line);background:var(--white);
+  width:100%;max-width:100%;min-width:0;padding:13px 14px;border-radius:12px;border:1.5px solid var(--line);background:var(--white);
   font-family:var(--body);font-size:.92rem;color:var(--ink);transition:border .25s,box-shadow .25s;
 }
 .field select:focus,.field input[type="text"]:focus{outline:none;border-color:var(--moss);box-shadow:0 0 0 4px rgba(46,125,107,.12)}
-.date-row{display:flex;gap:8px;overflow-x:auto;padding-bottom:6px;scrollbar-width:thin}
+.date-row{display:flex;gap:8px;overflow-x:auto;padding-bottom:6px;scrollbar-width:thin;-webkit-overflow-scrolling:touch;touch-action:pan-x;max-width:100%}
 .date-chip{
-  flex:none;width:58px;padding:10px 0;text-align:center;border-radius:13px;border:1.5px solid var(--line);
+  flex:none;width:60px;padding:11px 0;text-align:center;border-radius:13px;border:1.5px solid var(--line);
   background:var(--white);cursor:pointer;transition:.22s;font-family:var(--body);
 }
 .date-chip .dow{font-size:.66rem;font-weight:600;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.06em;display:block}
@@ -262,20 +262,20 @@ img{max-width:100%;display:block}
 .date-chip .mon{font-size:.64rem;color:var(--ink-soft);display:block}
 .date-chip.selected{border-color:var(--pine);background:var(--pine);transform:translateY(-2px)}
 .date-chip.selected .dow,.date-chip.selected .day,.date-chip.selected .mon{color:var(--cream)}
-.time-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.time-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(78px,1fr));gap:8px;min-width:0;max-width:100%}
 .time-chip{
-  padding:10px 0;text-align:center;border-radius:11px;border:1.5px solid var(--line);background:var(--white);
+  padding:11px 6px;text-align:center;border-radius:11px;border:1.5px solid var(--line);background:var(--white);
   font-size:.85rem;font-weight:600;color:var(--ink-soft);cursor:pointer;transition:.22s;font-family:var(--body);
 }
 .time-chip:hover{border-color:var(--moss)}
 .time-chip.selected{border-color:var(--apricot);background:var(--apricot);color:var(--white)}
-.bk-right{display:flex;flex-direction:column}
-.bk-preview{flex:1;background:#FBF8F2;border:1px solid var(--line);border-radius:18px;padding:24px;margin-bottom:20px}
+.bk-right{display:flex;flex-direction:column;min-width:0;max-width:100%}
+.bk-preview{flex:1;background:#FBF8F2;border:1px solid var(--line);border-radius:18px;padding:24px;margin-bottom:20px;min-width:0;max-width:100%}
 .bk-preview h4{font-family:var(--display);font-weight:500;font-size:1.02rem;margin-bottom:16px}
-.pv-row{display:flex;justify-content:space-between;padding:11px 0;border-bottom:1px dashed var(--line);font-size:.92rem}
+.pv-row{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;padding:11px 0;border-bottom:1px dashed var(--line);font-size:.92rem;min-width:0}
 .pv-row:last-of-type{border-bottom:none}
-.pv-row .k{color:var(--ink-soft)}
-.pv-row .v{font-weight:600}
+.pv-row .k{color:var(--ink-soft);flex:none}
+.pv-row .v{font-weight:600;text-align:right;min-width:0;overflow-wrap:break-word;word-break:break-word}
 .pv-empty{color:var(--ink-soft);font-size:.9rem;text-align:center;padding:26px 0}
 .book-btn{width:100%;justify-content:center}
 .book-success{
@@ -570,7 +570,7 @@ footer{border-top:1px solid var(--line);padding:44px 0 40px;background:var(--cre
   .preview-note{left:14px;font-size:.68rem;padding:7px 13px}
   .preview-body{padding:16px 6px 24px}
   .preview-hero h3{font-size:1.35rem}
-  .date-row,.time-grid{scrollbar-width:none}
+  .date-row,.time-grid{scrollbar-width:none;max-width:100%;min-width:0}
   .date-row::-webkit-scrollbar,.time-grid::-webkit-scrollbar{display:none}
 
   .process{padding:0 0 64px}
